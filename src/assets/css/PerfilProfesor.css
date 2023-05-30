@@ -1,0 +1,134 @@
+.profe-background-color {
+  display: flex;
+  position: fixed;
+  background-color: #4d8cf5;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.inicio-background {
+  display: flex;
+}
+
+.rate-comentario {
+  display: flex;
+  flex-grow: 1;
+}
+
+.rate {
+  flex-grow: 1;
+}
+
+.comentarios {
+  flex-grow: 4;
+}
+
+.profesor-name {
+  font-size: 5vh;
+  margin-left: 7vh;
+  margin-bottom: 2vh;
+  color: #4d8cf5;
+}
+
+.rate {
+  display: flex;
+  flex-direction: column;
+}
+
+.rate div {
+  margin: 2vh;
+}
+
+.rendimiento-dificultad {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.rendimiento-dificultad label {
+  color: #ea543b;
+  font-size: xx-large;
+  font-weight: bold;
+  margin-top: 1vh;
+}
+
+.rendimiento-dificultad div {
+  color: #ea543b;
+  font-size: 10vh;
+  font-weight: bold;
+  margin-top: 1vh;
+  border: solid 5px black;
+  padding: 3vh;
+  border-radius: 35px;
+}
+
+.comentarios {
+  display: flex;
+  flex-direction: column;
+  border: solid 5px black;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 3px 3px 3px lightblue;
+  margin-bottom: 5vh;
+  margin-right: 10vh;
+  max-height: 65vh;
+  max-width: 150vh;
+  align-items: center;
+  overflow: auto;
+}
+
+.inicio-logo:hover {
+  cursor: pointer;
+}
+
+.comentario-aparte {
+  display: flex;
+  border: solid 2px grey;
+  background-color: #f3f3f3;
+  box-shadow: 3px 3px 3px lightblue;
+  border-radius: 5px;
+  width: 90%;
+  flex-direction: column;
+  margin: 2vh;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.puntos-obligatorios {
+  display: flex;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.puntos-obligatorios div {
+  display: flex;
+  font-size: 3vh;
+  font-weight: bold;
+  margin: 1vh;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.rendimiento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comentario-visto {
+  height: 15vh;
+  max-height: 15vh;
+  max-width: 100%;
+  margin: 2vh;
+  border: solid 1px gray;
+  background-color: white;
+  border-radius: 5px;
+  font-size: x-large;
+  padding: 1vh;
+  overflow: auto;
+  overflow-wrap: break-word;
+}
