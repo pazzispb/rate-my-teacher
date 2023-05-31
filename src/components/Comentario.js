@@ -35,6 +35,8 @@ function Comentario({ nuevoComentario }) {
                     <option value={3.0}>B</option>
                     <option value={2.5}>C+</option>
                     <option value={2.0}>C</option>
+                    <option value={1.5}>D</option>
+                    <option value={0}>F</option>
                 </select>
                 <label>Dificultad: </label>
                 <select name="Dificultad" value={estado.Dificultad} onChange={handleChange}>
