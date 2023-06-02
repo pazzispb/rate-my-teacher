@@ -13,3 +13,11 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+const port = process.env.PORT;
+
+
+const app = require('./components/App'); // Assuming your app entry point is in src/App.js
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
