@@ -12,6 +12,7 @@
 
 1. React
 2. Firebase
+3. Express
 
 ## Pasos para ejecutar la aplicación
 
@@ -19,9 +20,9 @@
 
 `API_KEY`
 `AUTH_DOMAIN`
-`PROJECTID`
+`PROJECT_ID`
 `STORAGE_BUCKET`
-`MESSAGING_SENDER_ID`
+`MESSENGER_SENDER_ID`
 `APP_ID`
 `MEASUREMENT_ID`
 `PORT`
