@@ -1,6 +1,7 @@
 # Aplicación Rate My Teacher
 
 ## Equipo de trabajo
+
 - Pazzis Paulino 1103790
 - Paola Saldaña 1104081
 - Alexa Guzmán 1101488
@@ -8,11 +9,14 @@
 - Allen Silverio 1104220
 
 ## Tecnologías utilizadas
+
 1. React
 2. Firebase
 
 ## Pasos para ejecutar la aplicación
-### 1. Se debe tener un archivo .env con las siguientes variables de entorno:
+
+### 1. Se debe tener un archivo .env con las siguientes variables de entorno
+
 `API_KEY`
 `AUTH_DOMAIN`
 `PROJECTID`
@@ -23,8 +27,9 @@
 `PORT`
 
 ### 3. Correr la aplicación
-`node main.js`
 
-Ruta: http://localhost:3000/Rate_prof
+`npm start`
+
+Ruta: <http://localhost:3000/Rate_prof>
 
 *Nota*: Asegurarse de tener las dependencias instaladas por medio del comando `npm install`
