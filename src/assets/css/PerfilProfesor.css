@@ -28,8 +28,14 @@
 .profesor-name {
   font-size: 5vh;
   margin-left: 7vh;
-  margin-bottom: 2vh;
   color: #4d8cf5;
+}
+
+.profesor-area {
+  font-size: 2vh;
+  margin-left: 7vh;
+  margin-bottom: 2vh;
+  color: black;
 }
 
 .rate {

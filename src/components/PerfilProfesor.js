@@ -49,8 +49,14 @@ function PerfilProfesor({ profesor, id, user }) {
         else if (grado >= 2.5 && grado <= 2.9) {
             return 'C+'
         }
-        else {
+        else if (grado >= 2.0 && grado <= 2.4) {
             return 'C'
+        }
+        else if (grado >= 1.5 && grado <= 1.9) {
+            return 'D'
+        }
+        else {
+            return 'F'
         }
     }
 
@@ -64,7 +70,7 @@ function PerfilProfesor({ profesor, id, user }) {
         })
         const resultado = +(totalRendimiento / numero).toFixed(1)
 
-        if (isNaN(resultado) || resultado === 0) {
+        if (isNaN(resultado)) {
             return 'N/A'
         }
 
@@ -79,6 +85,7 @@ function PerfilProfesor({ profesor, id, user }) {
 
     console.log(profesor.comentarios)
 
+
     const renderizarComentarios = () => {
 
         return profesor.comentarios?.map((comentario, i) => (
@@ -89,6 +96,16 @@ function PerfilProfesor({ profesor, id, user }) {
                     </div>
                     <div className="dificultad">
                         <div>Dificultad: {comentario.Dificultad}</div>
+                    </div>
+                    <div className="dificultad">
+                        <div>Volvería a tomar: <span>&nbsp;</span>  {comentario.VolverTomar ? (
+                            <p> Si</p>
+                        ) : (
+                            <p>No</p>
+                        )}</div>
+                    </div>
+                    <div className="dificultad">
+                        <div>Autor: {comentario.autor}</div>
                     </div>
                 </div>
                 <div className="comentario-visto">{comentario.Comentario}</div>
@@ -132,9 +149,9 @@ function PerfilProfesor({ profesor, id, user }) {
             <div className="inicio-background">
                 <div className="signup-appbar">
                     <div className='inicio-appbar-diseño'>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span onClick={cambiarRuta}></span>
+                        <span onClick={cambiarRuta}></span>
+                        <span onClick={cambiarRuta}></span>
                     </div>
                     <div className="inicio-logo-search">
                         <div className='inicio-logo'>
@@ -153,6 +170,7 @@ function PerfilProfesor({ profesor, id, user }) {
                     </div>
                 </div>
                 <div className='profesor-name'>{profesor.nombre}</div>
+                <div className="profesor-area">{profesor.area}</div>
                 <div className='rate-comentario'>
                     <div className='rate'>
                         <div className='rendimiento-dificultad'>
