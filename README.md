@@ -12,19 +12,18 @@
 
 1. React
 2. Firebase
-3. Express
 
 ## Pasos para ejecutar la aplicación
 
 ### 1. Se debe tener un archivo .env con las siguientes variables de entorno
 
-`API_KEY`
-`AUTH_DOMAIN`
-`PROJECT_ID`
-`STORAGE_BUCKET`
-`MESSENGER_SENDER_ID`
-`APP_ID`
-`MEASUREMENT_ID`
+`REACT_APP_API_KEY`
+`REACT_APP_AUTH_DOMAIN`
+`REACT_APP_PROJECT_ID`
+`REACT_APP_STORAGE_BUCKET`
+`REACT_APP_MESSAGING_SENDER_ID`
+`REACT_APP_APP_ID`
+`REACT_APP_MEASUREMENT_ID`
 `PORT`
 
 ### 3. Correr la aplicación
