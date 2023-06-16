@@ -10,15 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env: ${{ fromJson(secrets.ENV_VARIABLES) }}
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
+      - name: Set up environment variables
+        run: |
+          echo ${{ secrets.ENV_VARIABLES }} >> .env
 
       - name: Install Dependencies
         run: npm install
@@ -31,3 +29,7 @@ jobs:
 
       - name: Build Project
         run: npm run build
+
+      - name: Cleanup
+        run: |
+          rm .env
