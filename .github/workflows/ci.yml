@@ -39,3 +39,19 @@ jobs:
 
       - name: Build Project
         run: npm run build
+
+      - name: Build and Tag Docker Image
+        run: |
+          docker build -t johan3118/rate_app:latest .
+          docker tag johan3118/rate_app:latest johan3118/rate_app:${{ github.sha }}
+
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          username: "your-dockerhub-username"
+          password: "your-dockerhub-password"
+
+      - name: Push Docker Image to Docker Hub
+        run: |
+          docker push johan3118/rate_app:latest
+          docker push johan3118/rate_app:${{ github.sha }}

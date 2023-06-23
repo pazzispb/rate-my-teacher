@@ -18,7 +18,6 @@ test('calls signIn on form submission', () => {
     </Router>,
   );
 
-  // Rellena los campos del formulario
   fireEvent.change(screen.getByPlaceholderText('Correo Institucional'), {
     target: { value: 'test@test.com' },
   });
@@ -26,10 +25,8 @@ test('calls signIn on form submission', () => {
     target: { value: 'testpassword' },
   });
 
-  // Envía el formulario
   fireEvent.submit(screen.getByText('Sign in'));
 
-  // Verifica que se llamó a signIn con los valores correctos
   expect(signInMock).toHaveBeenCalledWith({
     email: 'test@test.com',
     password: 'testpassword',
