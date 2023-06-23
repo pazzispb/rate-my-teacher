@@ -62,9 +62,9 @@ jobs:
           docker push johan3118/rate_app:${{ github.sha }}
 
       - name: Push Database Docker Image to Docker Hub
-          run: |
-            docker push johan3118/database_rate:latest
-            docker push johan3118/database_rate:${{ github.sha }}
+        run: |
+          docker push johan3118/database_rate:latest
+          docker push johan3118/database_rate:${{ github.sha }}
 
       - name: Deploy with Docker Compose
         run: |
