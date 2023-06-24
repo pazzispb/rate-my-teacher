@@ -76,7 +76,7 @@ jobs:
 
           docker-compose up -d
 
-        - name: Stop and Remove Containers
+      - name: Stop and Remove Containers
         run: |
           # Stop and remove the containers
           docker-compose down
