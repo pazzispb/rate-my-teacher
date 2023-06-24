@@ -2,8 +2,7 @@ FROM node:latest
 
 WORKDIR /app
 
-COPY ./ /app
-COPY !firebase.js /app
+COPY . .
 
 EXPOSE 3000
 
