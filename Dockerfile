@@ -2,9 +2,7 @@ FROM node:latest
 
 WORKDIR /app
 
-
-COPY . /app
-COPY --exclude=Firebase.js /app/
+COPY . .
 
 EXPOSE 3000
 
