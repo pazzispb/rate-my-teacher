@@ -3,7 +3,7 @@ services:
   app:
     image: johan3118/rate_app:latest
     ports:
-      - 3000:3000
+      - 3001:3001
     volumes:
       - shared-volume:/app/src
   database:
