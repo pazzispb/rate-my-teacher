@@ -5,4 +5,4 @@ WORKDIR /app
 COPY package.json .
 COPY src/Firebase.mjs .
 
-CMD ["node", "Firebase.js"]
+CMD ["node", "Firebase.mjs"]
