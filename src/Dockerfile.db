@@ -1,10 +1,10 @@
 FROM node:latest
 
-WORKDIR /app/src
+WORKDIR /app
 
 COPY package.json .
-COPY src/Firebase.mjs .
+COPY src/Firebase.mjs src/
 
 RUN npm install
 
-CMD ["node", "Firebase.mjs"]
+CMD ["node", "src/Firebase.mjs"]
