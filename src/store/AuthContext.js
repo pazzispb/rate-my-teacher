@@ -1,7 +1,7 @@
 import { useReducer, createContext } from "react";
 import reducer from "./AuthReducer";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import app from "../Firebase";
+import app from "../Firebase.mjs";
 
 const initialState = {
     currentUser: null,
