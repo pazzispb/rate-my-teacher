@@ -2,6 +2,6 @@ FROM node:latest
 
 WORKDIR /app
 
-COPY firebase.js .
+COPY Firebase.js .
 
-CMD ["node", "firebase.js"]
+CMD ["node", "Firebase.js"]
