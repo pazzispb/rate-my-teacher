@@ -65,3 +65,18 @@ jobs:
         run: |
           docker push johan3118/database_rate:latest
           docker push johan3118/database_rate:${{ github.sha }}
+
+      - name: Deploy with Docker Compose
+        run: |
+          curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o docker-compose
+          chmod +x docker-compose
+          sudo mv docker-compose /usr/local/bin/
+
+          docker-compose pull
+
+          docker-compose up -d
+
+      - name: Stop and Remove Containers
+        run: |
+          # Stop and remove the containers
+          docker-compose down
