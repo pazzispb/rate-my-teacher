@@ -3,6 +3,6 @@ FROM node:latest
 WORKDIR /app
 
 COPY package.json .
-COPY src/Firebase.js .
+COPY src/Firebase.mjs .
 
 CMD ["node", "Firebase.js"]
