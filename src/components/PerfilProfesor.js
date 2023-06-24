@@ -1,5 +1,5 @@
 import { getDatabase, ref, update } from "firebase/database";
-import app from '../Firebase';
+import app from '../Firebase.mjs';
 import { useNavigate } from "react-router";
 import Comentario from './Comentario.js';
 import Logo from '../assets/img/logo.PNG';

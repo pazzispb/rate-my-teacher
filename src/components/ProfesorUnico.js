@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getDatabase, ref, onValue } from "firebase/database";
-import app from '../Firebase.js';
+import app from '../Firebase.mjs';
 import PerfilProfesor from "./PerfilProfesor.js";
 
 

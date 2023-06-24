@@ -3,7 +3,7 @@ import Logo from '../assets/img/logo.PNG';
 import InicioImg from '../assets/img/inicio.PNG';
 import { Buscador } from './Buscador.js';
 import { useEffect, useState } from 'react';
-import app from '../Firebase.js';
+import app from '../Firebase.mjs';
 import { getDatabase, ref, onValue } from "firebase/database";
 import { Link } from 'react-router-dom'
 
