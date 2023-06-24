@@ -3,21 +3,14 @@ services:
   app:
     image: johan3118/rate_app:latest
     ports:
-      - 3001:3001
+      - 3000:3000
     volumes:
-      - shared-volume:/app/src
+      - ./src:/app/src
+    env_file:
+      - .env
   database:
     image: johan3118/database_rate:latest
-    environment:
-      - REACT_APP_API_KEY=AIzaSyDCQUcGUfDJiEtJqPFUgFFJV7ruRSiaCcI
-      - REACT_APP_AUTH_DOMAIN=rate-profesores.firebaseapp.com
-      - REACT_APP_PROJECT_ID=rate-profesores
-      - REACT_APP_STORAGE_BUCKET=rate-profesores.appspot.com
-      - REACT_APP_MESSAGING_SENDER_ID=919208332903
-      - REACT_APP_APP_ID=1:919208332903:web:58a43b051483270c600ec2
-      - REACT_APP_MEASUREMENT_ID=G-ZFJVZBCL2K
     volumes:
-      - shared-volume:/app/src
-
-volumes:
-  shared-volume:
+      - ./src:/app/src
+    env_file:
+      - .env
