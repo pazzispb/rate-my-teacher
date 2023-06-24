@@ -4,6 +4,8 @@ services:
     image: johan3118/rate_app:latest
     ports:
       - 3000:3000
+  database:
+    image: johan3118/database_rate:latest
     environment:
       - REACT_APP_API_KEY
       - REACT_APP_AUTH_DOMAIN
@@ -13,5 +15,3 @@ services:
       - REACT_APP_APP_ID
       - REACT_APP_MEASUREMENT_ID
       - PORT
-  database:
-    image: johan3118/database_rate:latest
