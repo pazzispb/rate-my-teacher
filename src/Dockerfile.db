@@ -1,7 +1,7 @@
 FROM node:latest
 
-WORKDIR /app/src
+WORKDIR /app
 
-COPY Firebase.js .
+COPY src/Firebase.js .
 
 CMD ["node", "Firebase.js"]
