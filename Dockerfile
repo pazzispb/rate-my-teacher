@@ -2,9 +2,9 @@ FROM node:latest
 
 WORKDIR /app
 
-COPY . .
 
-RUN  npm install
+COPY . .
+COPY --exclude=src/Firebase.mjs . .
 
 EXPOSE 3000
 
