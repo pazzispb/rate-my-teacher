@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
+      REACT_APP_AUTH_DOMAIN: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
+      REACT_APP_PROJECT_ID: ${{ secrets.REACT_APP_PROJECT_ID }}
+      REACT_APP_STORAGE_BUCKET: ${{ secrets.REACT_APP_STORAGE_BUCKET }}
+      REACT_APP_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_MESSAGING_SENDER_ID }}
+      REACT_APP_APP_ID: ${{ secrets.REACT_APP_APP_ID }}
+      REACT_APP_MEASUREMENT_ID: ${{ secrets.REACT_APP_MEASUREMENT_ID }}
+      PORT: 3000
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Build and Tag Docker Image
+        run: |
+          docker build -t johan3118/rate_app:latest .
+          docker tag johan3118/rate_app:latest johan3118/rate_app:${{ github.sha }}
+
+      - name: Build and Tag Database Docker Image
+        run: |
+          docker build -t johan3118/database_rate:latest -f src/Dockerfile.db .
+          docker tag johan3118/database_rate:latest johan3118/database_rate:${{ github.sha }}
+
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          username: "johan3118"
+          password: "Teczer-xicru4-vergox"
+
+      - name: Push Docker Image to Docker Hub
+        run: |
+          docker push johan3118/rate_app:latest
+          docker push johan3118/rate_app:${{ github.sha }}
+
+      - name: Push Database Docker Image to Docker Hub
+        run: |
+          docker push johan3118/database_rate:latest
+          docker push johan3118/database_rate:${{ github.sha }}

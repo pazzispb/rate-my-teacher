@@ -7,8 +7,8 @@ import { FaSearch } from 'react-icons/fa';
 import SignupImg from '../assets/img/signup.PNG';
 
 
-function SignIn({ user }) {
-    
+function SignIn() {
+
     const [error, setError] = useState(null)
     const navigate = useNavigate()
 
